@@ -45,17 +45,26 @@ class Calculator
     bread_total_cost = 0
 
     # methods to calculate sales costs
-    if milk_total % 2 == 0 and milk_total > 0
+    if milk_total % 2 == 0
       milk_total_cost = 5 * (milk_total/2)
     else
-      milk_total_cost = 5 * (milk_total/2) + 3.97
+      milk_total_cost = (5 * (milk_total/2)) + 3.97
     end
 
-    if bread_total % 3 == 0 and bread_total > 0
+    if bread_total < 3
+      bread_total_cost = 2.17 * bread_total
+    elsif bread_total % 3 == 0 
       bread_total_cost = 6 * (bread_total/3)
     else
-      bread_total_cost = 6 * (bread_total/3) + (2.17 * (bread_total % 3))
+      bread_total_cost = (6 * (bread_total/3)) + (2.17 * (bread_total % 3))
     end
+
+    total_actual_price = milk_total_cost + bread_total_cost + banana_total_cost + apple_total_cost
+    puts bread_total
+    puts banana_total
+    puts milk_total
+    puts apple_total
+    puts total_actual_price
 
   end
 
