@@ -60,11 +60,28 @@ class Calculator
     end
 
     total_actual_price = milk_total_cost + bread_total_cost + banana_total_cost + apple_total_cost
-    puts bread_total
-    puts banana_total
-    puts milk_total
-    puts apple_total
-    puts total_actual_price
+    money_saved = raw_total_price - total_actual_price
+
+    # Making sure all variables have 2 decimal points
+    milk_total_cost = "%.2f" % milk_total_cost
+    bread_total_cost = "%.2f" % bread_total_cost
+    banana_total_cost = "%.2f" % banana_total_cost
+    apple_total_cost = "%.2f" % apple_total_cost
+    money_saved = raw_total_price -  total_actual_price
+    total_actual_price = "%.2f" % total_actual_price
+    money_saved = "%.2f" % money_saved
+    
+    # Ending message
+    puts "         Items Purchased Chart"
+    puts "Item     Quantity         Price"
+    puts "-------------------------------------"
+    puts "Bread     #{bread_total}                $#{bread_total_cost}"
+    puts "Milk      #{milk_total}                $#{milk_total_cost}"
+    puts "Apple     #{apple_total}                $#{apple_total_cost}"
+    puts "Banana    #{banana_total}                $#{banana_total_cost}"
+    puts
+    puts "Total Price : $#{total_actual_price}"
+    puts "You saved $#{money_saved} today!"
 
   end
 
