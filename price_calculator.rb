@@ -35,9 +35,27 @@ class Calculator
     bread_price = 2.17
     banana_price = 0.99
     apple_price = 0.89
-    raw_total_price = (apple_total*apple_price) + (banana_total*banana_price) + (milk_total*milk_price) + (bread_total*bread_price)
+    banana_total_cost = banana_total*banana_price
+    apple_total_cost = apple_total*apple_price
+    
+    raw_total_price = (apple_total_cost) + (banana_total_cost) + (milk_total*milk_price) + (bread_total*bread_price)
 
+    # Milk and bread total cost after sales variables
+    milk_total_cost = 0
+    bread_total_cost = 0
 
+    # methods to calculate sales costs
+    if milk_total % 2 == 0 and milk_total > 0
+      milk_total_cost = 5 * (milk_total/2)
+    else
+      milk_total_cost = 5 * (milk_total/2) + 3.97
+    end
+
+    if bread_total % 3 == 0 and bread_total > 0
+      bread_total_cost = 6 * (bread_total/3)
+    else
+      bread_total_cost = 6 * (bread_total/3) + (2.17 * (bread_total % 3))
+    end
 
   end
 
